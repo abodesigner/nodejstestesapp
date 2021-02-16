@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require("path");
+const port = process.env.PORT || 3000;
 
 // setup template engine
 app.set('view engine','ejs');
@@ -55,6 +56,6 @@ app.get("*", (req,res)=>{
     res.send('404 NOT FOUND PAGE')
 })
 
-app.listen(3000, ()=> {
-    console.log("Server running ...");
+app.listen(port, ()=> {
+    console.log(`Server running @ ${port}...`);
 })
